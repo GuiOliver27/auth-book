@@ -21,8 +21,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
         @SuppressWarnings("null") HttpServletResponse response,
         @SuppressWarnings("null") FilterChain filterChain
     ) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        
+        final String authHeader = request.getHeader("Authorization");
+        @SuppressWarnings("unused")
+        final String jwt;
+        if (authHeader == null || !authHeader.startsWith("Bearer")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+        jwt = authHeader.substring(7);
     }
     
 }
