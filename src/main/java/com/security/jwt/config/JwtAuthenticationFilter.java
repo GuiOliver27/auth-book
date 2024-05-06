@@ -2,6 +2,7 @@ package com.security.jwt.config;
 
 import java.io.IOException;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -15,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter{
     private final JwtService jwtService;
+    private final UserDetailsService userDetailsService;
 
     @SuppressWarnings("unused")
     @Override
@@ -32,6 +34,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
         }
         jwt = authHeader.substring(7);
         userEmail = jwtService.extractUsername(jwt);
+        
     }
     
 }
