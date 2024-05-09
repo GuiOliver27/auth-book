@@ -74,4 +74,9 @@ public class JwtService {
     byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
     return Keys.hmacShaKeyFor(keyBytes);
   }
+
+public boolean isTokenValid(String jwt, UserDetails userDetails) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'isTokenValid'");
+}
 }
