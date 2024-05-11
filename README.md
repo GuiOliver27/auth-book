@@ -18,7 +18,7 @@ O método `generateToken` gera um token JWT com base nas informações do usuár
 O filtro `JwtAuthenticationFilter` é responsável por interceptar requisições e validar o token JWT presente no cabeçalho de autorização.
 Se o token for válido, ele autentica o usuário e permite o acesso ao endpoint solicitado.
 
-## Tecnologias Utilizadsa
+## Tecnologias Utilizadas
 - Java 17
 - Maven
 - Spring Boot 3.2.5
